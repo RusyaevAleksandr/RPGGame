@@ -6,7 +6,7 @@
 
         private int _health = 150;
 
-        public string Name => "Троль";
+        public string Name => "Тролль";
 
         public int Health => _health;
 

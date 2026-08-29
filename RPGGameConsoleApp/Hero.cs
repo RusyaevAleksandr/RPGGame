@@ -50,13 +50,11 @@
                 throw new ArgumentException("Количество очков лечения не может быть отрицательным");
             }
 
-            if (Hp + countTreatmentPoints > 100)
+            Hp += countTreatmentPoints;
+
+            if (Hp > 100)
             {
                 Hp = 100;
-            }
-            else
-            {
-                Hp += countTreatmentPoints;
             }
         }
 
