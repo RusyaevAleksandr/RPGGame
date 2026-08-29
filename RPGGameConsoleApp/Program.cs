@@ -1,10 +1,66 @@
-﻿namespace RPGGameConsoleApp
-{
+﻿using System.Text;
+using static RPGGameConsoleApp.Archer;
+
+namespace RPGGameConsoleApp
+{      
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.Write("Введите имя героя: ");
+            var name = Console.ReadLine();
+
+            Console.WriteLine("Выберите класс героя:");
+            Console.WriteLine("1. Воин");
+            Console.WriteLine("2. Маг");
+            Console.WriteLine("3. Лучник");
+            var choice = Console.ReadLine();
+
+            Hero hero = null;
+            switch (choice)
+            {
+                case "1":
+                    hero = new Warrior(name);
+                    break;
+                case "2":
+                    hero = new Mage(name);
+                    break;
+                case "3":
+                    hero = new Archer(name);
+                    break;
+                default:
+                    Console.WriteLine("Неверный выбор.");
+                    return;
+            }
+            hero.Display();
+
+            //IEnemy[] enemies = [new Goblin(), new Golem()];
+
+            //var battle = new Battle();
+
+            //battle.OnEnemyDefeated += enemy =>
+            //{
+            //    var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
+            //    Console.WriteLine($"Опыт +{enemy.ExpReward}");
+            //    if (leveledUp)
+            //    {
+            //        Console.WriteLine($"{hero.Name} достиг уровня {hero.LevelProgress.Level}!");
+            //        hero.Display();
+            //    }
+            //};
+
+            //var game = new Game();
+
+            //foreach (var enemy in enemies)
+            //{
+            //    battle.Fight(hero, enemy);
+
+            //    var stars = game.Play();
+            //    hero.AddStars(stars);
+            //    Console.WriteLine($"Бонус +{stars} к характеристикам {hero.Name}");
+            //    hero.Display();
+            //}
         }
     }
 }

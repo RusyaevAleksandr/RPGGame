@@ -58,19 +58,19 @@
             }
         }
 
-        //public abstract int Attack(IEnemy enemy);
+        public abstract int Attack(IEnemy enemy);
 
-        //public abstract string ClassName { get; }
+        public abstract string ClassName { get; }
 
-        //public void Display()
-        //{
-        //    Console.WriteLine($"Имя героя: {Name}");
-        //    Console.WriteLine($"Класс героя: {ClassName}");
-        //    Console.WriteLine($"Здоровье: {Hp}");
-        //    Console.WriteLine($"Сила: {Strength}");
-        //    Console.WriteLine($"Ловкость: {Agility}");
-        //    Console.WriteLine($"Уровень: {LevelProgress.Level}");
-        //    Console.WriteLine();
-        //}
+        public void Display()
+        {
+            Console.WriteLine($"Имя героя: {Name}");
+            Console.WriteLine($"Класс героя: {ClassName}");
+            Console.WriteLine($"Здоровье: {Hp}");
+            Console.WriteLine($"Сила: {Strength}");
+            Console.WriteLine($"Ловкость: {Agility}");
+            //Console.WriteLine($"Уровень: {LevelProgress.Level}");
+            Console.WriteLine();
+        }
     }
 }

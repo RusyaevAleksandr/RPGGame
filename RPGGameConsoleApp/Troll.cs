@@ -18,9 +18,9 @@
 
         public void TakeDamage(int amount, bool ignoreArmor = false)
         {
-            int real = ignoreArmor ? amount : amount - _armor;
+            int realDamage = ignoreArmor ? amount : amount - _armor;
 
-            _health -= Math.Max(real, 0);
+            _health -= Math.Max(realDamage, 0);
 
             if (_health < 0)
             {
