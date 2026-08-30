@@ -3,23 +3,23 @@
     public interface IEnemy
     {
         /// <summary>
-        /// Имя
+        /// Имя врага
         /// </summary>
         string Name { get; }
         /// <summary>
-        /// Здоровье
+        /// Здоровье врага
         /// </summary>
         int Health { get; }
         /// <summary>
-        /// Броня
+        /// Броня врага
         /// </summary>
         int Armor { get; }
         /// <summary>
-        /// Живой или нет
+        /// Живой враг или нет
         /// </summary>
         bool IsAlive { get; }
         /// <summary>
-        /// Опыт за победу
+        /// Кол-во опыта за победу над данным врагом
         /// </summary>
         int ExpReward { get; }
         /// <summary>

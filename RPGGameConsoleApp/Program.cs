@@ -2,12 +2,13 @@
 using static RPGGameConsoleApp.Archer;
 
 namespace RPGGameConsoleApp
-{      
-    internal class Program
+{
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine("Добро пожаловать в игру!");
             Console.Write("Введите имя героя: ");
             var name = Console.ReadLine();
 
@@ -39,9 +40,9 @@ namespace RPGGameConsoleApp
             }
             hero.Display();
 
-            //IEnemy[] enemies = [new Goblin(), new Golem()];
+            IEnemy[] enemies = [new Goblin(), new Troll()];
 
-            //var battle = new Battle();
+            var battle = new Battle();
 
             //battle.OnEnemyDefeated += enemy =>
             //{
@@ -56,15 +57,15 @@ namespace RPGGameConsoleApp
 
             //var game = new Game();
 
-            //foreach (var enemy in enemies)
-            //{
-            //    battle.Fight(hero, enemy);
+            foreach (var enemy in enemies)
+            {
+                battle.Fight(hero, enemy);
 
-            //    var stars = game.Play();
-            //    hero.AddStars(stars);
-            //    Console.WriteLine($"Бонус +{stars} к характеристикам {hero.Name}");
-            //    hero.Display();
-            //}
+                //var stars = game.Play();
+                //hero.AddStars(stars);
+                //Console.WriteLine($"Бонус +{stars} к характеристикам {hero.Name}");
+                hero.Display();
+            }
         }
     }
 }

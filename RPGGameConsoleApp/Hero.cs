@@ -20,7 +20,7 @@
         public int Agility { get; private set; }
         //public LevelProgress LevelProgress { get; private set; } = new LevelProgress();
         /// <summary>
-        /// Героя живой или нет
+        /// Герой живой или нет
         /// </summary>
         public bool IsAlive => Health > 0;
         public Hero(string name, int hp, int strength, int agility)

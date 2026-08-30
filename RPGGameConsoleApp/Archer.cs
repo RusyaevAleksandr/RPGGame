@@ -1,6 +1,6 @@
 ﻿namespace RPGGameConsoleApp
 {
-    public partial class Archer : Hero
+    public class Archer : Hero
     {
         public Archer(string name)
             : base(name, hp: 90, strength: 10, agility: 15)
