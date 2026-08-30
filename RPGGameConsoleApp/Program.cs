@@ -15,6 +15,7 @@ namespace RPGGameConsoleApp
             Console.WriteLine("1. Воин");
             Console.WriteLine("2. Маг");
             Console.WriteLine("3. Лучник");
+            Console.WriteLine("4. Целитель");
             var choice = Console.ReadLine();
 
             Hero hero = null;
@@ -28,6 +29,9 @@ namespace RPGGameConsoleApp
                     break;
                 case "3":
                     hero = new Archer(name);
+                    break;
+                case "4":
+                    hero = new Healer(name);
                     break;
                 default:
                     Console.WriteLine("Неверный выбор.");

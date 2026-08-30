@@ -1,31 +1,20 @@
 ﻿namespace RPGGameConsoleApp
 {
-    public class Archer : Hero
+    public partial class Archer : Hero
     {
-        public class Mage : Hero
-        {
-            public Mage(string name)
-                : base(name, hp: 80, strength: 8, agility: 10)
-            {
-            }
-
-            public override string ClassName => "Маг";
-
-            public override int Attack(IEnemy enemy)
-            {
-                int damage = Strength * 3;
-                enemy.TakeDamage(damage, ignoreArmor: true);
-                return damage;
-            }
-        }
         public Archer(string name)
             : base(name, hp: 90, strength: 10, agility: 15)
         {
         }
-
+        /// <summary>
+        /// Имя класса герой
+        /// </summary>
         public override string ClassName => "Лучник";
-
-
+        /// <summary>
+        /// Атака лучника, урон
+        /// </summary>
+        /// <param name="enemy"></param>
+        /// <returns></returns>
         public override int Attack(IEnemy enemy)
         {
             int damage = Strength / 2 + Agility;
