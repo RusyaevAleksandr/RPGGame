@@ -44,16 +44,16 @@ namespace RPGGameConsoleApp
 
             var battle = new Battle();
 
-            //battle.OnEnemyDefeated += enemy =>
-            //{
-            //    var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
-            //    Console.WriteLine($"Опыт +{enemy.ExpReward}");
-            //    if (leveledUp)
-            //    {
-            //        Console.WriteLine($"{hero.Name} достиг уровня {hero.LevelProgress.Level}!");
-            //        hero.Display();
-            //    }
-            //};
+            battle.OnEnemyDefeated += enemy =>
+            {
+                //var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
+                Console.WriteLine($"Опыт +{enemy.ExpReward}");
+                //if (leveledUp)
+                //{
+                //    Console.WriteLine($"{hero.Name} достиг уровня {hero.LevelProgress.Level}!");
+                //    hero.Display();
+                //}
+            };
 
             //var game = new Game();
 

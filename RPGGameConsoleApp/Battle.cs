@@ -2,8 +2,15 @@
 {
     class Battle
     {
+        /// <summary>
+        /// Событие, оповещение враг повержен.
+        /// </summary>
         public event Action<IEnemy> OnEnemyDefeated;
-
+        /// <summary>
+        /// Метод сражение, бой
+        /// </summary>
+        /// <param name="hero"></param>
+        /// <param name="enemy"></param>
         public void Fight(Hero hero, IEnemy enemy)
         {
             Console.WriteLine($"\n=== {hero.Name} против {enemy.Name} ===");
