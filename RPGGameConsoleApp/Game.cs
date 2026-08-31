@@ -43,6 +43,7 @@ namespace RPGGameConsoleApp
             }
 
             Console.WriteLine($"Поймано звезд: {stars}");
+
             return stars;
         }
     }

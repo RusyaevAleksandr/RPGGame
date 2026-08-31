@@ -21,12 +21,14 @@
 
             // 25% шанс нанести критический удар, удваивающий урон
             Random random = new Random();
+
             if (random.Next(100) < 25)
             {
                 damage *= 2;
             }
 
             enemy.TakeDamage(damage);
+
             return damage;
         }
     }

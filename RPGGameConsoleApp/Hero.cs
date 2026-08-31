@@ -60,6 +60,7 @@
             }                
 
             Strength += stars;
+
             Agility += stars;
         }
 
