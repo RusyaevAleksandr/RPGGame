@@ -1,37 +1,37 @@
-﻿namespace RPGGameConsoleApp
+﻿namespace RPGGameConsoleApp.Monster
 {
-    public class Troll: IEnemy
+    public class Goblin: IEnemy
     {
         /// <summary>
-        /// Броня по умолчанию Тролля
+        /// Броня по умолчанию Гоблина
         /// </summary>
-        private const int _armor = 5;
+        private const int _armor = 3;
         /// <summary>
-        /// Кол-во жизней по умолчанию монстра Тролля
+        /// Кол-во жизней по умолчанию монстра Гоблина
         /// </summary>
-        private int _health = 100;
+        private int _health = 30;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>
-        public string Name => "Тролль";
+        public string Name => "Гоблин";
         /// <summary>
-        /// Кол-во жизней монстра Тролля
+        /// Кол-во жизней монстра Гоблина
         /// </summary>
         public int Health => _health;
         /// <summary>
-        /// Тролль живой или нет
+        /// Гоблин живой или нет
         /// </summary>
         public bool IsAlive => _health > 0;
         /// <summary>
-        /// Кол-во очков за убийство Тролля
+        /// Кол-во очков за убийство Гоблина
         /// </summary>
-        public int ExpReward => 50;
+        public int ExpReward => 20;
         /// <summary>
-        /// Кол-во брони у Тролля
+        /// Кол-во брони у Гоблина
         /// </summary>
         public int Armor => _armor;
         /// <summary>
-        /// Урон получаемый Троллем
+        /// Урон получаемый Гоблином
         /// </summary>
         /// <param name="amount"></param>
         /// <param name="ignoreArmor"></param>

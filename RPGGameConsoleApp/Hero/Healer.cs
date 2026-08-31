@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RPGGameConsoleApp.Monster;
 
-namespace RPGGameConsoleApp
+namespace RPGGameConsoleApp.Hero
 {
     public class Healer : Hero
     {

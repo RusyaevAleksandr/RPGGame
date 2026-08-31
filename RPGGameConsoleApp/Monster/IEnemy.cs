@@ -1,4 +1,4 @@
-﻿namespace RPGGameConsoleApp
+﻿namespace RPGGameConsoleApp.Monster
 {
     public interface IEnemy
     {

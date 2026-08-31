@@ -1,4 +1,7 @@
-﻿namespace RPGGameConsoleApp
+﻿using RPGGameConsoleApp.Monster;
+using RPGGameConsoleApp.Hero;
+
+namespace RPGGameConsoleApp
 {
     class Battle
     {
@@ -11,7 +14,7 @@
         /// </summary>
         /// <param name="hero"></param>
         /// <param name="enemy"></param>
-        public void Fight(Hero hero, IEnemy enemy)
+        public void Fight(Hero.Hero hero, IEnemy enemy)
         {
             Console.WriteLine($"\n=== {hero.Name} против {enemy.Name} ===");
 

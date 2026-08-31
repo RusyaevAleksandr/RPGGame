@@ -1,5 +1,6 @@
-﻿using System.Text;
-using static RPGGameConsoleApp.Archer;
+﻿using RPGGameConsoleApp.Hero;
+using RPGGameConsoleApp.Monster;
+using System.Text;
 
 namespace RPGGameConsoleApp
 {
@@ -21,7 +22,7 @@ namespace RPGGameConsoleApp
 
             var choice = Console.ReadLine();
 
-            Hero hero = null;
+            Hero.Hero hero = null;
 
             switch (choice)
             {

@@ -1,4 +1,6 @@
-﻿namespace RPGGameConsoleApp
+﻿using RPGGameConsoleApp.Monster;
+
+namespace RPGGameConsoleApp.Hero
 {
     public class Warrior : Hero
     {
