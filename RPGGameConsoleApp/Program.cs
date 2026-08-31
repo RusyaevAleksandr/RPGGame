@@ -46,7 +46,7 @@ namespace RPGGameConsoleApp
 
             battle.OnEnemyDefeated += enemy =>
             {
-                //var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
+                var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
                 Console.WriteLine($"Опыт +{enemy.ExpReward}");
                 //if (leveledUp)
                 //{
@@ -55,15 +55,15 @@ namespace RPGGameConsoleApp
                 //}
             };
 
-            //var game = new Game();
+            var game = new Game();
 
             foreach (var enemy in enemies)
             {
                 battle.Fight(hero, enemy);
 
-                //var stars = game.Play();
-                //hero.AddStars(stars);
-                //Console.WriteLine($"Бонус +{stars} к характеристикам {hero.Name}");
+                var stars = game.Play();
+                hero.AddStars(stars);
+                Console.WriteLine($"Бонус +{stars} к характеристикам {hero.Name}");
                 hero.Display();
             }
         }

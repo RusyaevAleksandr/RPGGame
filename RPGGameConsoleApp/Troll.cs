@@ -9,7 +9,7 @@
         /// <summary>
         /// Кол-во жизней по умолчанию монстра Тролля
         /// </summary>
-        private int _health = 150;
+        private int _health = 100;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>

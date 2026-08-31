@@ -18,7 +18,10 @@
         /// Ловкость героя
         /// </summary>
         public int Agility { get; private set; }
-        //public LevelProgress LevelProgress { get; private set; } = new LevelProgress();
+        /// <summary>
+        /// Уровень героя
+        /// </summary>
+        public LevelProgress LevelProgress { get; private set; } = new LevelProgress();
         /// <summary>
         /// Герой живой или нет
         /// </summary>
@@ -94,7 +97,7 @@
             Console.WriteLine($"Здоровье: {Health}");
             Console.WriteLine($"Сила: {Strength}");
             Console.WriteLine($"Ловкость: {Agility}");
-            //Console.WriteLine($"Уровень: {LevelProgress.Level}");
+            Console.WriteLine($"Уровень: {LevelProgress.Level}");
             Console.WriteLine();
         }
     }
