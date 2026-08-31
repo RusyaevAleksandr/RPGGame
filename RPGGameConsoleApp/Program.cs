@@ -10,38 +10,51 @@ namespace RPGGameConsoleApp
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Добро пожаловать в игру!");
+            Console.WriteLine();
             Console.Write("Введите имя героя: ");
-
             var name = Console.ReadLine();
+            Console.WriteLine();
 
             Console.WriteLine("Выберите класс героя:");
             Console.WriteLine("1. Воин");
             Console.WriteLine("2. Маг");
             Console.WriteLine("3. Лучник");
             Console.WriteLine("4. Целитель");
+            Console.WriteLine();
 
-            var choice = Console.ReadLine();
+            bool correctChoice = true;
 
             Hero.Hero hero = null;
 
-            switch (choice)
+            while (correctChoice)
             {
-                case "1":
-                    hero = new Warrior(name);
-                    break;
-                case "2":
-                    hero = new Mage(name);
-                    break;
-                case "3":
-                    hero = new Archer(name);
-                    break;
-                case "4":
-                    hero = new Healer(name);
-                    break;
-                default:
-                    Console.WriteLine("Неверный выбор.");
-                    return;
-            }
+                Console.Write("Введите цифру: ");
+                var choice = Console.ReadLine();
+                Console.WriteLine();               
+
+                switch (choice)
+                {
+                    case "1":
+                        hero = new Warrior(name);
+                        correctChoice = false;
+                        break;
+                    case "2":
+                        hero = new Mage(name);
+                        correctChoice = false;
+                        break;
+                    case "3":
+                        hero = new Archer(name);
+                        correctChoice = false;
+                        break;
+                    case "4":
+                        hero = new Healer(name);
+                        correctChoice = false;
+                        break;
+                    default:
+                        Console.WriteLine("Ввели некорректные данные. Попробуйте еще раз!");
+                        break;
+                }
+            }            
 
             hero.Display();
 
