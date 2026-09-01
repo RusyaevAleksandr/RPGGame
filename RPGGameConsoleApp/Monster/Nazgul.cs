@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RPGGameConsoleApp.Monster
+﻿namespace RPGGameConsoleApp.Monster
 {
     public class Nazgul : IEnemy
     {
