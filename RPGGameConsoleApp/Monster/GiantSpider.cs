@@ -14,7 +14,7 @@ namespace RPGGameConsoleApp.Monster
         /// <summary>
         /// Сила атаки по умолчанию Гигантского Паука Шелоб
         /// </summary>
-        private int _strength = 5;
+        private int _strength = 10;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>

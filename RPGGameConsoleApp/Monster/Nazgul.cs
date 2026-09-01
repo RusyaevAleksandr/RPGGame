@@ -45,7 +45,7 @@
         /// <returns></returns>
         public int DealsDamage(Hero.Hero hero)
         {
-            int damage = Strength;
+            int damage = Strength * 2;
             hero.TakeDamage(damage);
             return damage;
         }

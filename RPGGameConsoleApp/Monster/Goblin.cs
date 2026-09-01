@@ -14,7 +14,7 @@ namespace RPGGameConsoleApp.Monster
         /// <summary>
         /// Сила атаки по умолчанию Гоблина
         /// </summary>
-        private int _strength = 2;
+        private int _strength = 6;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>

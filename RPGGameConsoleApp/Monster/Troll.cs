@@ -13,7 +13,7 @@
         /// <summary>
         /// Сила атаки по умолчанию Тролля
         /// </summary>
-        private int _strength = 4;
+        private int _strength = 10;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>
