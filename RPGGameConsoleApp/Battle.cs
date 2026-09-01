@@ -47,6 +47,7 @@ namespace RPGGameConsoleApp
                 }
             }
 
+            Console.WriteLine();
             Console.WriteLine($"{enemy.Name} повержен!");
 
             OnEnemyDefeated?.Invoke(enemy);

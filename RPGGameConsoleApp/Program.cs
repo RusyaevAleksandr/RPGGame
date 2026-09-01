@@ -58,7 +58,7 @@ namespace RPGGameConsoleApp
 
             hero.Display();
 
-            IEnemy[] enemies = [new Goblin(), new Troll()];
+            IEnemy[] enemies = [new Goblin(), new Troll(), new GiantSpider(), new Nazgul()];
 
             var battle = new Battle();
 
@@ -66,10 +66,12 @@ namespace RPGGameConsoleApp
             {
                 var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
 
+                Console.WriteLine();
                 Console.WriteLine($"Опыт +{enemy.ExpReward}");
 
                 if (leveledUp)
                 {
+                    Console.WriteLine();
                     Console.WriteLine($"{hero.Name} достиг уровня {hero.LevelProgress.Level}!");
 
                     hero.Display();
@@ -86,6 +88,7 @@ namespace RPGGameConsoleApp
 
                 hero.AddStars(stars);
 
+                Console.WriteLine();
                 Console.WriteLine($"Бонус +{stars} к характеристикам {hero.Name}");
 
                 hero.Display();
