@@ -11,6 +11,10 @@
         /// </summary>
         private int _health = 80;
         /// <summary>
+        /// Сила атаки по умолчанию Назгула
+        /// </summary>
+        private int _strength = 6;
+        /// <summary>
         /// Имя врага, монстра
         /// </summary>
         public string Name => "Назгул";
@@ -30,6 +34,21 @@
         /// Кол-во брони у Назгула
         /// </summary>
         public int Armor => _armor;
+        /// <summary>
+        /// Сила атаки Назгула
+        /// </summary>
+        public int Strength => _strength;
+        /// <summary>
+        /// Урон наносимый Назгулом
+        /// </summary>
+        /// <param name="hero"></param>
+        /// <returns></returns>
+        public int DealsDamage(Hero.Hero hero)
+        {
+            int damage = Strength;
+            hero.TakeDamage(damage);
+            return damage;
+        }
         /// <summary>
         /// Урон получаемый Назгулом
         /// </summary>

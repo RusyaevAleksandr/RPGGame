@@ -18,15 +18,33 @@ namespace RPGGameConsoleApp
         {
             Console.WriteLine($"\n=== {hero.Name} против {enemy.Name} ===");
 
-            while (enemy.IsAlive)
+            while (enemy.IsAlive && hero.IsAlive)
             {
+                Console.WriteLine();
                 Console.WriteLine("Для атаки нажмите любую клавишу...");
 
                 Console.ReadKey();
 
-                int damage = hero.Attack(enemy);
+                int damageHero = hero.Attack(enemy);
 
-                Console.WriteLine($"{hero.Name} бьет {enemy.Name}: -{damage}  (осталось {enemy.Health})");
+                Console.WriteLine($"{hero.Name} бьет {enemy.Name}: -{damageHero} (HP у {enemy.Name} осталось {enemy.Health})");
+
+                if (hero.IsAlive)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"{enemy.Name} наносит ответный удар!");
+
+                    int damageMonster = enemy.DealsDamage(hero);
+
+                    Console.WriteLine($"{enemy.Name} бьет {hero.Name}: -{damageMonster} (HP у {hero.Name} осталось {hero.Health})");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Ваш герой повержен!");
+
+                    return;
+                }
             }
 
             Console.WriteLine($"{enemy.Name} повержен!");

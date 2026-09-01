@@ -1,4 +1,5 @@
-﻿namespace RPGGameConsoleApp.Monster
+﻿
+namespace RPGGameConsoleApp.Monster
 {
     public class Goblin: IEnemy
     {
@@ -10,6 +11,10 @@
         /// Кол-во жизней по умолчанию монстра Гоблина
         /// </summary>
         private int _health = 30;
+        /// <summary>
+        /// Сила атаки по умолчанию Гоблина
+        /// </summary>
+        private int _strength = 2;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>
@@ -30,6 +35,21 @@
         /// Кол-во брони у Гоблина
         /// </summary>
         public int Armor => _armor;
+        /// <summary>
+        /// Сила атаки Гоблина
+        /// </summary>
+        public int Strength => _strength;
+        /// <summary>
+        /// Урон наносимый Гоблином
+        /// </summary>
+        /// <param name="hero"></param>
+        /// <returns></returns>
+        public int DealsDamage(Hero.Hero hero)
+        {
+            int damage = Strength;
+            hero.TakeDamage(damage);
+            return damage;
+        }
         /// <summary>
         /// Урон получаемый Гоблином
         /// </summary>

@@ -7,7 +7,7 @@ namespace RPGGameConsoleApp.Hero
         /// <summary>
         /// Имя героя
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; }
         /// <summary>
         /// Кол-во жизней героя
         /// </summary>
@@ -23,7 +23,7 @@ namespace RPGGameConsoleApp.Hero
         /// <summary>
         /// Уровень героя
         /// </summary>
-        public LevelProgress LevelProgress { get; private set; } = new LevelProgress();
+        public LevelProgress LevelProgress { get; } = new LevelProgress();
         /// <summary>
         /// Герой живой или нет
         /// </summary>
@@ -36,24 +36,16 @@ namespace RPGGameConsoleApp.Hero
             Agility = agility;
         }
         /// <summary>
-        /// Нанесенный урон героем
+        /// Получает урон герой
         /// </summary>
         /// <param name="damage"></param>
+        /// <returns></returns>
+        //public abstract void TakeDamage(int damage);
+        /// <summary>
+        /// Добавление звезд
+        /// </summary>
+        /// <param name="stars"></param>
         /// <exception cref="ArgumentException"></exception>
-        public void TakeDamage(int damage)
-        {
-            if (damage < 0)
-            {
-                throw new ArgumentException("Урон не может быть отрицательным");
-            }                
-
-            Health -= damage;
-            if (Health < 0)
-            {
-                Health = 0;
-            }                
-        }
-
         public void AddStars(int stars)
         {
             if (stars < 0)
@@ -81,7 +73,7 @@ namespace RPGGameConsoleApp.Hero
             }
         }
         /// <summary>
-        /// Атака героя, урон
+        /// Атака героя, наносит урон
         /// </summary>
         /// <param name="enemy"></param>
         /// <returns></returns>
@@ -102,6 +94,20 @@ namespace RPGGameConsoleApp.Hero
             Console.WriteLine($"Ловкость: {Agility}");
             Console.WriteLine($"Уровень: {LevelProgress.Level}");
             Console.WriteLine();
+        }
+        public void TakeDamage(int damage)
+        {
+            if (damage < 0)
+            {
+                throw new ArgumentException("Урон не может быть отрицательным");
+            }
+
+            Health -= damage;
+
+            if (Health < 0)
+            {
+                Health = 0;
+            }
         }
     }
 }

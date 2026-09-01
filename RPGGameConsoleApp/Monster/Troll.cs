@@ -11,6 +11,10 @@
         /// </summary>
         private int _health = 100;
         /// <summary>
+        /// Сила атаки по умолчанию Тролля
+        /// </summary>
+        private int _strength = 4;
+        /// <summary>
         /// Имя врага, монстра
         /// </summary>
         public string Name => "Тролль";
@@ -30,6 +34,21 @@
         /// Кол-во брони у Тролля
         /// </summary>
         public int Armor => _armor;
+        /// <summary>
+        /// Сила атаки Тролля
+        /// </summary>
+        public int Strength => _strength;
+        /// <summary>
+        /// Урон наносимый Троллем
+        /// </summary>
+        /// <param name="hero"></param>
+        /// <returns></returns>
+        public int DealsDamage(Hero.Hero hero)
+        {
+            int damage = Strength;
+            hero.TakeDamage(damage);
+            return damage;
+        }
         /// <summary>
         /// Урон получаемый Троллем
         /// </summary>

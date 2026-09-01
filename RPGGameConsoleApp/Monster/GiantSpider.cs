@@ -1,4 +1,5 @@
-﻿namespace RPGGameConsoleApp.Monster
+﻿
+namespace RPGGameConsoleApp.Monster
 {
     internal class GiantSpider : IEnemy
     {
@@ -10,6 +11,10 @@
         /// Кол-во жизней по умолчанию монстра Гигантского Паука Шелоб
         /// </summary>
         private int _health = 110;
+        /// <summary>
+        /// Сила атаки по умолчанию Гигантского Паука Шелоб
+        /// </summary>
+        private int _strength = 5;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>
@@ -30,6 +35,21 @@
         /// Кол-во брони у Гигантского Паука Шелоб
         /// </summary>
         public int Armor => _armor;
+        /// <summary>
+        /// Сила атаки Гигантского Паука Шелоб
+        /// </summary>
+        public int Strength => _strength;
+        /// <summary>
+        /// Урон наносимый Гигантским Пауком Шелоб
+        /// </summary>
+        /// <param name="hero"></param>
+        /// <returns></returns>
+        public int DealsDamage(Hero.Hero hero)
+        {
+            int damage = Strength * 2;
+            hero.TakeDamage(damage);
+            return damage;
+        }
         /// <summary>
         /// Урон получаемый Гигантским Пауком Шелоб
         /// </summary>
