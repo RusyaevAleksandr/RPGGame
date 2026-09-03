@@ -29,7 +29,7 @@ namespace RPGGameConsoleApp
 
                 Console.WriteLine($"{hero.Name} бьет {enemy.Name}: -{damageHero} (HP у {enemy.Name} осталось {enemy.Health})");
 
-                if (hero.IsAlive)
+                if (enemy.IsAlive)
                 {
                     Console.WriteLine();
                     Console.WriteLine($"{enemy.Name} наносит ответный удар!");
@@ -38,19 +38,20 @@ namespace RPGGameConsoleApp
 
                     Console.WriteLine($"{enemy.Name} бьет {hero.Name}: -{damageMonster} (HP у {hero.Name} осталось {hero.Health})");
                 }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Ваш герой повержен!");
-
-                    return;
-                }
             }
 
-            Console.WriteLine();
-            Console.WriteLine($"{enemy.Name} повержен!");
+            if (!hero.IsAlive)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Ваш герой повержен!");
+            }
+            if (!enemy.IsAlive)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{enemy.Name} повержен!");
 
-            OnEnemyDefeated?.Invoke(enemy);
+                OnEnemyDefeated?.Invoke(enemy);
+            }
         }
     }
 }

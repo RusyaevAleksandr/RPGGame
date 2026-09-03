@@ -87,6 +87,7 @@ namespace RPGGameConsoleApp.Hero
         /// </summary>
         public void Display()
         {
+            Console.WriteLine();
             Console.WriteLine($"Имя героя: {Name}");
             Console.WriteLine($"Класс героя: {ClassName}");
             Console.WriteLine($"Здоровье: {Health}");

@@ -13,7 +13,7 @@
         /// <summary>
         /// Сила атаки по умолчанию Назгула
         /// </summary>
-        private int _strength = 6;
+        private int _strength = 12;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>
