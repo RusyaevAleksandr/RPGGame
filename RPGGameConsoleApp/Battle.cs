@@ -10,6 +10,10 @@ namespace RPGGameConsoleApp
         /// </summary>
         public event Action<IEnemy> OnEnemyDefeated;
         /// <summary>
+        /// Событие, оповещение герой повержен.
+        /// </summary>
+        public event Action<Hero.Hero> OnHeroDefeated;
+        /// <summary>
         /// Метод сражение, бой
         /// </summary>
         /// <param name="hero"></param>
@@ -44,6 +48,8 @@ namespace RPGGameConsoleApp
             {
                 Console.WriteLine();
                 Console.WriteLine("Ваш герой повержен!");
+
+                OnHeroDefeated?.Invoke(hero);
             }
             if (!enemy.IsAlive)
             {

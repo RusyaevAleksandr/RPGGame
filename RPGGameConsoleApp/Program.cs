@@ -69,7 +69,10 @@ namespace RPGGameConsoleApp
 
                 battle.OnEnemyDefeated += enemy =>
                 {
-                    isEndGame = true;
+                    if (!enemies.Last().IsAlive)
+                    {
+                        isEndGame = true;
+                    }
 
                     var leveledUp = hero.LevelProgress.AddExp(enemy.ExpReward);
 
@@ -83,7 +86,41 @@ namespace RPGGameConsoleApp
 
                         hero.Display();
                     }
-                };                
+                };
+
+                battle.OnHeroDefeated += hero =>
+                {
+                    correctChoice = true;
+
+                    Console.WriteLine("Вы проиграли!");
+                    Console.WriteLine();
+                    Console.WriteLine("Хотите попробовать еще раз?");
+                    Console.WriteLine("1. Да");
+                    Console.WriteLine("2. Нет");
+                    Console.WriteLine();
+
+                    while (correctChoice)
+                    {
+                        Console.Write("Введите цифру: ");
+                        var choice = Console.ReadLine();
+                        Console.WriteLine();
+
+                        switch (choice)
+                        {
+                            case "1":
+                                isEndGame = false;
+                                correctChoice = false;
+                                break;
+                            case "2":
+                                isEndGame = true;
+                                correctChoice = false;
+                                break;
+                            default:
+                                Console.WriteLine("Ввели некорректные данные. Попробуйте еще раз!");
+                                break;
+                        }
+                    }
+                };
 
                 if (hero.IsAlive)
                 {
@@ -102,40 +139,7 @@ namespace RPGGameConsoleApp
 
                         hero.Display();
                     }
-                }
-                else
-                {
-                    correctChoice = true;
-
-                    Console.WriteLine("Вы проиграли!");
-                    Console.WriteLine();
-                    Console.WriteLine("Хотите попробовать еще раз?");
-                    Console.WriteLine("1. Да");
-                    Console.WriteLine("1. Нет");
-                    Console.WriteLine();
-
-                    while (correctChoice)
-                    {
-                        Console.Write("Введите цифру: ");
-                        var choice = Console.ReadLine();
-                        Console.WriteLine();
-
-                        switch (choice)
-                        {
-                            case "1": 
-                                isEndGame = false; 
-                                correctChoice = false; 
-                                break;
-                            case "2": 
-                                isEndGame = true; 
-                                correctChoice = false; 
-                                break;
-                            default:
-                                Console.WriteLine("Ввели некорректные данные. Попробуйте еще раз!");
-                                break;
-                        }
-                    }
-                }
+                }                
             }
         }
     }
