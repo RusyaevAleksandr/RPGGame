@@ -24,6 +24,9 @@ namespace RPGGameConsoleApp.Hero
         /// Уровень героя
         /// </summary>
         public LevelProgress LevelProgress { get; } = new LevelProgress();
+        /// <summary>
+        /// Сумма звезд за игру
+        /// </summary>
         public int SumStars { get; private set; }
         /// <summary>
         /// Герой живой или нет
@@ -54,6 +57,10 @@ namespace RPGGameConsoleApp.Hero
 
             SumStars += stars;
         }
+        /// <summary>
+        /// Получить итоговый счет
+        /// </summary>
+        /// <returns></returns>
         public int GetFinalInvoice()
         {
             return SumStars + (LevelProgress.Level * 100);
