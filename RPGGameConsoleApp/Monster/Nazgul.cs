@@ -9,11 +9,11 @@
         /// <summary>
         /// Кол-во жизней по умолчанию монстра Назгула
         /// </summary>
-        private int _health = 80;
+        private int _health = 60;
         /// <summary>
         /// Сила атаки по умолчанию Назгула
         /// </summary>
-        private int _strength = 12;
+        private int _strength = 10;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>

@@ -10,11 +10,11 @@ namespace RPGGameConsoleApp.Monster
         /// <summary>
         /// Кол-во жизней по умолчанию монстра Гигантского Паука Шелоб
         /// </summary>
-        private int _health = 110;
+        private int _health = 100;
         /// <summary>
         /// Сила атаки по умолчанию Гигантского Паука Шелоб
         /// </summary>
-        private int _strength = 10;
+        private int _strength = 7;
         /// <summary>
         /// Имя врага, монстра
         /// </summary>

@@ -5,7 +5,7 @@ namespace RPGGameConsoleApp.Hero
     public class Healer : Hero
     {
         public Healer(string name) 
-            : base(name, hp: 80, strength: 5, agility: 8)
+            : base(name, hp: 90, strength: 9, agility: 9)
         {
         }
         /// <summary>
@@ -19,7 +19,7 @@ namespace RPGGameConsoleApp.Hero
         /// <returns></returns>
         public override int Attack(IEnemy enemy)
         {
-            int damage = Strength / 4 + Agility;
+            int damage = Strength / 2 + Agility;
 
             // Исцеляет себя с 15% вероятностью после каждой атаки,
             // кол-во очков исцеления жизни равно урону нанесенному противнику 

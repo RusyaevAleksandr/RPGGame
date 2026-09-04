@@ -5,7 +5,7 @@ namespace RPGGameConsoleApp.Hero
     public class Mage : Hero
     {
         public Mage(string name)
-            : base(name, hp: 80, strength: 8, agility: 10)
+            : base(name, hp: 80, strength: 10, agility: 10)
         {
         }
         /// <summary>
@@ -19,7 +19,7 @@ namespace RPGGameConsoleApp.Hero
         /// <returns></returns>
         public override int Attack(IEnemy enemy)
         {
-            int damage = Strength * 3;
+            int damage = Strength + Agility;
             enemy.TakeDamage(damage, ignoreArmor: true);
             return damage;
         }
