@@ -1,5 +1,4 @@
 ﻿using RPGGameConsoleApp.Monster;
-using RPGGameConsoleApp.Hero;
 
 namespace RPGGameConsoleApp
 {

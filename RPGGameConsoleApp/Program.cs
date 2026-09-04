@@ -11,6 +11,8 @@ namespace RPGGameConsoleApp
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Добро пожаловать в игру!");
             Console.WriteLine();
+            ShowRules();
+            Console.WriteLine();
 
             bool isEndGame = false;
 
@@ -122,7 +124,7 @@ namespace RPGGameConsoleApp
                     }
                 };
 
-                var game = new Game();
+                var game = new MiniGame();
 
                 foreach (var enemy in enemies)
                 {
@@ -145,6 +147,23 @@ namespace RPGGameConsoleApp
                     }
                 }
             }
+        }
+
+        public static void ShowRules()
+        {
+            Console.WriteLine("=== ПРАВИЛА ИГРЫ ===");
+            Console.WriteLine("1. Цель: победить всех монстров, попасть в топ списка победителей по очкам.");
+            Console.WriteLine("2. Выбрать класс героя, каждый имеет свои уникальные характеристики и способности.");
+            Console.WriteLine("*  Класс Воин - имеет большой запас жизней, сильный удар, но слабую ловкость");
+            Console.WriteLine("*  Класс Маг - имеет небольшой запас жизней, средний удар, среднюю ловкость");
+            Console.WriteLine("*  Класс Лучник - имеет средний запас жизней, небольшой удар, высокую ловкость.");
+            Console.WriteLine("** Супер способность Лучника: критический удар - 25% шанс нанести критический удар, удваивающий урон");
+            Console.WriteLine("*  Класс Целитель - имеет небольшой запас жизней, небольшой удар, среднюю ловкость.");
+            Console.WriteLine("** Супер способность исцеление - Исцеляет некоторое кол-во очков жизней с 15% вероятностью после каждой атаки.");
+            Console.WriteLine("3. Перед вами появляются монстры по очереди, вы должны сразиться с каждым из них");
+            Console.WriteLine("3. После каждого выигранного сражения начинается мини-игра, поймай звезду.");
+            Console.WriteLine("*  В течении 10 сек. появляются иконки, каждая пойманная иконка дает +1 к характеристикам героя (сила и ловкость).");
+            Console.WriteLine("====================");
         }
     }
 }

@@ -5,7 +5,7 @@ namespace RPGGameConsoleApp.Hero
     public class Warrior : Hero
     {
         public Warrior(string name)
-            : base(name, hp: 120, strength: 15, agility: 10)
+            : base(name, hp: 100, strength: 15, agility: 10)
         {
         }
         /// <summary>

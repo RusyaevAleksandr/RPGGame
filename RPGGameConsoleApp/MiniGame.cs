@@ -3,7 +3,7 @@ using System.Text;
 
 namespace RPGGameConsoleApp
 {
-    public class Game
+    public class MiniGame
     {
         public int Play()
         {
