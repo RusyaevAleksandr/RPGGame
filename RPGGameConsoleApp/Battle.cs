@@ -12,7 +12,7 @@ namespace RPGGameConsoleApp
         /// <summary>
         /// Событие, оповещение герой повержен.
         /// </summary>
-        public event Action<Hero.Hero> OnHeroDefeated;
+        public event Action<Hero.Hero> OnHeroDefeated;        
         /// <summary>
         /// Метод сражение, бой
         /// </summary>

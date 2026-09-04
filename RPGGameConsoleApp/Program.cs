@@ -122,14 +122,14 @@ namespace RPGGameConsoleApp
                     }
                 };
 
-                if (hero.IsAlive)
+                var game = new Game();
+
+                foreach (var enemy in enemies)
                 {
-                    var game = new Game();
+                    battle.Fight(hero, enemy);
 
-                    foreach (var enemy in enemies)
+                    if (hero.IsAlive)
                     {
-                        battle.Fight(hero, enemy);
-
                         var stars = game.Play();
 
                         hero.AddStars(stars);
@@ -139,7 +139,11 @@ namespace RPGGameConsoleApp
 
                         hero.Display();
                     }
-                }                
+                    else
+                    {
+                        break;
+                    }
+                }
             }
         }
     }
