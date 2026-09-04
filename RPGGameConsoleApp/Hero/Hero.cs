@@ -24,6 +24,7 @@ namespace RPGGameConsoleApp.Hero
         /// Уровень героя
         /// </summary>
         public LevelProgress LevelProgress { get; } = new LevelProgress();
+        public int SumStars { get; private set; }
         /// <summary>
         /// Герой живой или нет
         /// </summary>
@@ -35,12 +36,6 @@ namespace RPGGameConsoleApp.Hero
             Strength = strength;
             Agility = agility;
         }
-        /// <summary>
-        /// Получает урон герой
-        /// </summary>
-        /// <param name="damage"></param>
-        /// <returns></returns>
-        //public abstract void TakeDamage(int damage);
         /// <summary>
         /// Добавление звезд
         /// </summary>
@@ -56,8 +51,13 @@ namespace RPGGameConsoleApp.Hero
             Strength += stars;
 
             Agility += stars;
-        }
 
+            SumStars += stars;
+        }
+        public int GetFinalInvoice()
+        {
+            return SumStars + (LevelProgress.Level * 100);
+        }
         public void Heal(int countTreatmentPoints)
         {
             if (countTreatmentPoints < 0)
@@ -96,6 +96,11 @@ namespace RPGGameConsoleApp.Hero
             Console.WriteLine($"Уровень: {LevelProgress.Level}");
             Console.WriteLine();
         }
+        /// <summary>
+        /// Получает урон герой
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <returns></returns>
         public void TakeDamage(int damage)
         {
             if (damage < 0)
