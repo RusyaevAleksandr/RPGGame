@@ -8,6 +8,8 @@ namespace RPGGameConsoleApp
         public int Play()
         {
             Console.WriteLine("\n=== ЛОВИ ЗВЕЗДЫ · 10 СЕКУНД ===");
+            Console.WriteLine("Как только появится иконка, нажми любую клавишу ...");
+            Console.WriteLine();
 
             var random = new Random();
             
